@@ -70,7 +70,7 @@ fun Countdown(modifier: Modifier, isState: MutableState<Boolean>, reSetState: Mu
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
                     Text(
-                        text = String.format("%.1f", expanded.value / 1000),
+                        text = String.format("%.1f", expanded.value*10),
                         style = MaterialTheme.typography.h2,
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
