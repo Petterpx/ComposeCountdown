@@ -38,7 +38,11 @@ import androidx.compose.ui.unit.dp
  */
 
 @Composable
-fun Countdown(modifier: Modifier, isState: MutableState<Boolean>, reSetState: MutableState<Boolean>) {
+fun Countdown(
+    modifier: Modifier,
+    isState: MutableState<Boolean>,
+    reSetState: MutableState<Boolean>
+) {
     Box(modifier = modifier) {
         val expanded = mutableStateOf(0f)
 
@@ -63,6 +67,7 @@ fun Countdown(modifier: Modifier, isState: MutableState<Boolean>, reSetState: Mu
                     colors = listOf(Color.Green, Color.Gray, Color.Red),
                     progressState = expanded
                 )
+                val countDownText = String.format("%.1f", expanded.value * 10)
                 Column(modifier = Modifier.align(Alignment.Center)) {
                     Text(
                         text = "schedule",
@@ -70,7 +75,7 @@ fun Countdown(modifier: Modifier, isState: MutableState<Boolean>, reSetState: Mu
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
                     Text(
-                        text = String.format("%.1f", expanded.value*10),
+                        text = countDownText,
                         style = MaterialTheme.typography.h2,
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
